@@ -25,8 +25,7 @@ public class JiraController {
 	@Autowired
 	@Qualifier("xmlMapper")
 	private XmlMapper xmlMapper;
-//	private final String REQUEST_URL = "https://jira.atlassian.com/rest/api/2/search?jql=issuetype IN (Bug, Documentation, Enhancement) AND UPDATED > startOfWeek()";
-	private final String REQUEST_URL = "https://jira.atlassian.com/rest/api/2/search?jql=issuetype IN (Bug, Documentation, Enhancement) AND UPDATED > startOfWeek() & maxResults=1000";
+	private final String REQUEST_URL = "https://jira.atlassian.com/rest/api/2/search?jql=issuetype IN (Bug, Documentation, Enhancement) AND UPDATED > startOfWeek()";
 	
 	@PostMapping(path = "/test", produces = "application/json", consumes = "application/json")
 	public JiraIssuesResponsePojo getJiraInfo(@RequestBody RequestPojo requestPojo) {
